@@ -1,0 +1,36 @@
+server:
+  port: 8086
+
+#redis
+spring:
+  redis:
+    port: 6379
+    database: 0
+    password: 1101328zjw
+    host: 8.135.34.162
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+    timeout: 5000
+
+  #cache
+  cache:
+    cache-names: cache1,cache2
+    redis:
+      time-to-live: 600000
+
+  #datasourcea
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/redisTest?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    name: redisTest
+    username: root
+    password: 123456
+
+#mybatis
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.fxf.springbootredis2.entity
